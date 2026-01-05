@@ -1,18 +1,18 @@
 "use client";
 import { deleteTodo } from "@/actions/todoAction";
-import { useEffect, useState } from "react";
+import { AnyActionArg, useEffect, useState } from "react";
 import AddTodo from "./AddTodo";
 import EditTodo from "./EditTodo";
 
-function AllTodos({ allTodos, editTodo }) {
+function AllTodos({ allTodos, editTodo }:any) {
   const [editFlag, setEditFlag] = useState(editTodo);
   const [selectedTodo, setSelectedTodo] = useState(null);
 
-  async function handleDeleteTodo(id) {
+  async function handleDeleteTodo(id:any) {
     await deleteTodo(id);
   }
 
-  function handleEditTodo(todo) {
+  function handleEditTodo(todo:any) {
     setEditFlag(true);
     setSelectedTodo({ ...todo });
   }
@@ -42,7 +42,7 @@ function AllTodos({ allTodos, editTodo }) {
           </p>
         )}
 
-        {allTodos.map((todo) => (
+        {allTodos.map((todo:any) => (
           <li
             key={todo._id}
             className="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm border hover:shadow-md transition">

@@ -10,19 +10,19 @@ export async function getAllTodos(){
     return JSON.stringify(todos)
 }
 
-export async function addTodo(todo){
+export async function addTodo(todo:any){
     await dbConnect();
     await Todo.create({...todo});
     redirect("/todos")
 }
 
-export async function deleteTodo(id) {
+export async function deleteTodo(id:any) {
     await dbConnect();
     await Todo.findByIdAndDelete(id);
     redirect("/todos");
 }
 
-export async function updateTodo(todo) {
+export async function updateTodo(todo:any) {
     await dbConnect();
     await Todo.findByIdAndUpdate(todo._id, todo);
     redirect("/todos");
