@@ -18,10 +18,7 @@ export default function Page() {
         <div className="flex gap-4 justify-center">
           <Link
             href="/todos"
-            className="px-6 py-2 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
-          >
-            View Todos
-          </Link>
+            className="px-6 py-2 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition">View Todos</Link>
         </div>
 
       </div>
