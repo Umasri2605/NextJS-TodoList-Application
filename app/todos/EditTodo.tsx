@@ -2,9 +2,9 @@
 import React, { useRef, useState } from "react";
 import { updateTodo } from "@/actions/todoAction";
 
-function EditTodo({ todo }) {
+function EditTodo({ todo   }) {
   const [etodo, setETodo] = useState({ ...todo });
-  const ref1 = useRef<HTMLInputElement>(null);
+  const ref1 = useRef();
 
   async function handleUpdateTodo() {
     if (!etodo.title.trim()) return;
